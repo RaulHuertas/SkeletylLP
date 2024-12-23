@@ -64,8 +64,8 @@ def assignKeys ():
     capa1[33] =  kc.SPACE
     capa1[34] =  temporal2
     capa1[35] =  kc.BSPACE
-    capa1[36] =  kc.LSHIFT
-    capa1[37] =  kc.ENTER
+    capa1[36] =  kc.ENTER
+    capa1[37] =  kc.LSHIFT
 
 
     #CAPA2
@@ -90,7 +90,7 @@ def assignKeys ():
     capa2[22] =  noAsg
     capa2[23] =  noAsg
     capa2[24] =  TILDE_DIERESIS
-    capa2[25] =  kc.NN
+    capa2[25] =  kc.N1
     capa2[26] =  kc.N2
     capa2[27] =  kc.N3
     capa2[28] =  kc.N4
@@ -101,8 +101,8 @@ def assignKeys ():
     capa2[33] =  kc.SPACE
     capa2[34] =  goHome
     capa2[35] =  kc.DELETE
-    capa2[36] =  kc.LSHIFT
-    capa2[37] =  kc.ENTER
+    capa2[36] =  kc.ENTER
+    capa2[37] =  kc.LSHIFT
 
     #CAPA3
     capa3[0] =  kc.INSERT
@@ -143,8 +143,8 @@ def assignKeys ():
     capa3[33] =  kc.APPLICATION
     capa3[34] =  goHome
     capa3[35] =  kc.BSPACE
-    capa3[36] =  kc.LSHIFT
-    capa3[37] =  kc.ENTER
+    capa3[36] =  kc.ENTER
+    capa3[37] =  kc.LSHIFT
 
 
     

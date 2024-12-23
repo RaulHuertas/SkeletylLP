@@ -32,6 +32,10 @@ class NKB_USB(USBKB):
             interval=0.020,  # Debounce time in floating point seconds
             max_events=4
         )
+        import digitalio
+        chargeFastPin = digitalio.DigitalInOut(board.CHARGE_RATE)
+        chargeFastPin.direction = digitalio.Direction.OUTPUT
+        chargeFastPin.value = False
 
 class USBFeedback(Layers):
     def __init__(self, pin, nLeds = 128, brightness=0.2):

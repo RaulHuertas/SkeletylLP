@@ -43,7 +43,7 @@ def isItOn(cols, rows, keyIndex):
 row_pins = (board.D8, board.D7, board.D0, board.D1,)
 col_pins = ( board.D2, board.D3,board.D4, board.D5,board.D6,)
 
-testing = True
+testing = False
 
 def initKB():
     from nkbusb import NKB_USB, USBFeedback
