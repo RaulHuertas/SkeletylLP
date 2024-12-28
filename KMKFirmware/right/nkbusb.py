@@ -38,11 +38,14 @@ class NKB_USB(USBKB):
         chargeFastPin.value = False
 
 class USBFeedback(Layers):
-    def __init__(self, pin, nLeds = 128, brightness=0.2):
+    def __init__(self, pin, nLeds = 128, brightness=0.1):
         Layers.__init__(self)
         self.br =brightness
         from neopixel import NeoPixel
-        self.rgbStrip =  NeoPixel(pin, nLeds,brightness=self.br , auto_write=False)      
+        self.rgbStrip =  NeoPixel(pin, nLeds,brightness=self.br , auto_write=False)     
+        self.nLeds = nLeds
+        for pix in range(nLeds):
+            self.rgbStrip[pix] = (0,255,0) 
         self.wpmC = 0
         self.wpmHigh = False
         
@@ -107,6 +110,16 @@ class USBFeedback(Layers):
         for code, names in codes:
             make_key(names=names, constructor=KeyboardKey, code=code)
 
+    def fullyPaintAs(self, color):
+        for pix in range(self.nLeds):
+            self.rgbStrip[pix] = color 
+        
+        emptyPos = [0,1,2,3,5,6,7, 14,15,23,47,55,54,63,62,61,8,9,10,11,48,49,50,51,56,57,58,59]
+        for empt in emptyPos:
+            #oppColor = (255-color[0],255-color[1],255-color[2])
+            oppColor = (255,255,255)
+            self.rgbStrip[empt] = oppColor
+            self.rgbStrip[empt+64] = oppColor
 
     def incrWPM(self, inc=1):
         self.wpmC +=  inc
@@ -161,50 +174,27 @@ class USBFeedback(Layers):
         dtcyc = 30000
         dtcycOff = 65535
         if self.currentLayer == 0:
-            self.rgbStrip[1] = PURPLE
-            self.rgbStrip[2] = OFF
-            self.rgbStrip[3] = OFF
-            self.rgbStrip[4] = OFF
-            self.rgbStrip[5] = OFF
-
+            self.fullyPaintAs(RED)
             self.redLED.duty_cycle = dtcyc
             self.greenLED.duty_cycle = dtcycOff
             self.blueLED.duty_cycle = dtcycOff
         elif self.currentLayer == 1:
-            self.rgbStrip[1] = PURPLE
-            self.rgbStrip[2] = PURPLE 
-            self.rgbStrip[3] = OFF
-            self.rgbStrip[4] = OFF
-            self.rgbStrip[5] = OFF
+            self.fullyPaintAs(GREEN)
             self.redLED.duty_cycle = dtcycOff
             self.greenLED.duty_cycle = dtcyc
             self.blueLED.duty_cycle = dtcycOff
         elif self.currentLayer == 2:
-            self.rgbStrip[1] = PURPLE
-            self.rgbStrip[2] = PURPLE
-            self.rgbStrip[3] = PURPLE
-            self.rgbStrip[4] = OFF
-            self.rgbStrip[5] = OFF
+            self.fullyPaintAs(BLUE)
             self.redLED.duty_cycle = dtcycOff
             self.greenLED.duty_cycle = dtcycOff
             self.blueLED.duty_cycle = dtcyc
         elif self.currentLayer == 3:
-            
-            self.rgbStrip[1] = PURPLE
-            self.rgbStrip[2] = PURPLE
-            self.rgbStrip[3] = PURPLE
-            self.rgbStrip[4] = PURPLE
-            self.rgbStrip[5] = OFF    
-
+            self.fullyPaintAs(PURPLE)
             self.redLED.duty_cycle = dtcyc
             self.greenLED.duty_cycle = dtcyc
             self.blueLED.duty_cycle = dtcycOff
         elif self.currentLayer == 4:
-            self.rgbStrip[1] = PURPLE
-            self.rgbStrip[2] = PURPLE
-            self.rgbStrip[3] = PURPLE
-            self.rgbStrip[4] = PURPLE
-            self.rgbStrip[5] = PURPLE
+            self.fullyPaintAs(WHITE)
             self.redLED.duty_cycle = dtcyc
             self.greenLED.duty_cycle = dtcycOff
             self.blueLED.duty_cycle = dtcyc

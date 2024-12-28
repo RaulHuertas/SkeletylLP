@@ -45,8 +45,11 @@ def assignKeys ():
     capa1[9] =  kc.P
     
     capa1[10] =  kc.A
+    capa1[11] =   kc.S
     capa1[14] =  kc.G
+
     capa1[15] =  kc.H
+    capa1[18] =  kc.L
     capa1[19] =  NTIL
     
     capa1[20] =  kc.Z
@@ -63,15 +66,15 @@ def assignKeys ():
     capa1[32] =  kc.TAB
     capa1[33] =  kc.SPACE
     capa1[34] =  temporal2
-    capa1[35] =  kc.BSPACE
+    capa1[35] =  kc.LEFT_SUPER
     capa1[36] =  kc.ENTER
     capa1[37] =  kc.LSHIFT
 
 
     #CAPA2
     capa2[0] =  kc.ESC
-    capa2[1] =  kc.HOME
-    capa2[2] =  kc.END
+    capa2[1] =  kc.BSPACE
+    capa2[2] =  kc.DELETE
     capa2[3] =  OPENING_BRAQUETS
     capa2[4] =  PLUS
     capa2[5] =  kc.N6
@@ -80,16 +83,19 @@ def assignKeys ():
     capa2[8] =  kc.N9
     capa2[9] =  kc.N0
     
-    capa2[10] =  kc.RALT
+    capa2[10] =  TILDE_DIERESIS
+    capa2[11] =  OPENING_QUESTION_MARK
     capa2[14] =  PIPE
+    
     capa2[15] =  kc.LEFT
+    capa2[18] =  kc.RIGHT
     capa2[19] =  LESSER_GREATER
     
-    capa2[20] =  noAsg
-    capa2[21] =  noAsg
-    capa2[22] =  noAsg
-    capa2[23] =  noAsg
-    capa2[24] =  TILDE_DIERESIS
+    capa2[20] =  kc.F5
+    capa2[21] =  kc.F9
+    capa2[22] =  kc.F10
+    capa2[23] =  kc.F11
+    capa2[24] =  kc.F12
     capa2[25] =  kc.N1
     capa2[26] =  kc.N2
     capa2[27] =  kc.N3
@@ -100,7 +106,7 @@ def assignKeys ():
     capa2[32] =  irACapa3
     capa2[33] =  kc.SPACE
     capa2[34] =  goHome
-    capa2[35] =  kc.DELETE
+    capa2[35] =  kc.LEFT_SUPER
     capa2[36] =  kc.ENTER
     capa2[37] =  kc.LSHIFT
 
@@ -118,20 +124,16 @@ def assignKeys ():
     
     capa3[10] =  kc.DELETE
     capa3[11] =  kc.END
-    capa3[12] =  kc.PGDOWN
-    capa3[13] =  kc.PSCREEN
-    capa3[14] =  noAsg
+    capa3[14] =  kc.MEDIA_PLAY_PAUSE 
     capa3[15] =  noAsg
-    capa3[16] =  noAsg
-    capa3[17] =  noAsg
     capa3[18] =  kc.F11
     capa3[19] =  kc.F12
     
-    capa3[20] =  noAsg
-    capa3[21] =  noAsg
-    capa3[22] =  noAsg
-    capa3[23] =  noAsg
-    capa3[24] =  noAsg
+    capa3[20] =  kc.AUDIO_MUTE
+    capa3[21] =  kc.AUDIO_VOL_DOWN
+    capa3[22] =  kc.AUDIO_VOL_UP
+    capa3[23] =  kc.MEDIA_PREV_TRACK
+    capa3[24] =  kc.MEDIA_NEXT_TRACK
     capa3[25] =  kc.F1
     capa3[26] =  kc.F2
     capa3[27] =  kc.F3
@@ -139,32 +141,28 @@ def assignKeys ():
     capa3[29] =  kc.F5
 
     #thumb keys
-    capa3[32] =  kc.ESC
+    capa3[32] =  kc.TAB
     capa3[33] =  kc.APPLICATION
     capa3[34] =  goHome
-    capa3[35] =  kc.BSPACE
+    capa3[35] =  kc.LEFT_SUPER
     capa3[36] =  kc.ENTER
     capa3[37] =  kc.LSHIFT
 
-
-    
     #HOME ROW MODS
     capa1[13] =   KC.HT(kc.F, kc.LCTRL)
     capa1[16] =   KC.HT(kc.J, kc.RCTRL)
     capa1[12] =   KC.HT(kc.D, kc.LALT)
     capa1[17] =   KC.HT(kc.K, kc.RALT)
-    capa1[11] =   KC.HT(kc.S, kc.LEFT_SUPER)
-    capa1[18] =   KC.HT(kc.L, kc.RIGHT_SUPER)
 
     capa2[13] =   KC.HT(CLOSING_BRAQUETS, kc.LCTRL)
     capa2[16] =   KC.HT(kc.DOWN, kc.RCTRL)
     capa2[12] =   KC.HT(QUOTE, kc.LALT)
     capa2[17] =   KC.HT(kc.UP, kc.RALT)
-    capa2[11] =   KC.HT(OPENING_QUESTION_MARK, kc.LEFT_SUPER)
-    capa2[18] =   KC.HT(kc.RIGHT, kc.RIGHT_SUPER)
 
-
-
+    capa3[13] =  KC.HT(kc.PSCREEN, kc.LCTRL)
+    capa3[16] =  KC.HT(noAsg, kc.RCTRL)
+    capa3[12] =  KC.HT(kc.PGDOWN, kc.LALT)
+    capa3[17] =  KC.HT(noAsg, kc.RALT)
 
     return  [
         capa1,

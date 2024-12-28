@@ -72,11 +72,11 @@ def initKB():
         35,36,37,38,39,
     ]
     
-    fb = USBFeedback(board.D9, 64, 0.03)
+    fb = USBFeedback(board.D9, 128, 0.01)
     
     from kmk.modules.holdtap import HoldTap
     holdtap = HoldTap()
-    holdtap.tap_time = 300
+    #holdtap.tap_time = 600
     keyboard.modules = [
         split, 
         fb,
